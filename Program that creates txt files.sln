@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program that creates txt files", "Program that creates txt files.csproj", "{BF754779-EF65-435D-842E-69762C765078}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF754779-EF65-435D-842E-69762C765078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF754779-EF65-435D-842E-69762C765078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF754779-EF65-435D-842E-69762C765078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF754779-EF65-435D-842E-69762C765078}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7B3FDF5-445E-4AE0-8CE0-A67BF43F9DCC}
+	EndGlobalSection
+EndGlobal
