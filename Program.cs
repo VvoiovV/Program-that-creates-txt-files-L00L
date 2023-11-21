@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 class Program
@@ -12,7 +13,7 @@ class Program
             for (int i = 1; i < 10; i++)
             {
                 string filePath = Path.Combine(desktopPath, $"L0{new string('0', i)}L.txt");
-                CreateTextFile(filePath);
+                CreateAndOpenTextFile(filePath);
             }
         }
         catch (Exception ex)
@@ -20,6 +21,13 @@ class Program
             Console.WriteLine("Błąd: " + ex.Message);
         }
     }
+
+    static void CreateAndOpenTextFile(string filePath)
+    {
+        CreateTextFile(filePath);
+        OpenFile(filePath);
+    }
+
     static void CreateTextFile(string filePath)
     {
         using (StreamWriter sw = new StreamWriter(filePath))
@@ -32,6 +40,27 @@ class Program
                 }
                 sw.WriteLine();
             }
+        }
+    }
+
+    static void OpenFile(string filePath)
+    {
+        try
+        {
+            Process.Start(filePath);
+            Console.WriteLine($"Otwarto plik: {filePath}");
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine($"Błąd: Plik {filePath} nie istnieje.");
+        }
+        catch (UnauthorizedAccessException)
+        {
+            Console.WriteLine($"Błąd: Brak uprawnień do otwarcia pliku {filePath}.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Błąd podczas otwierania pliku {filePath}: {ex.Message}");
         }
     }
 }
