@@ -7,9 +7,11 @@ class Program
     {
         try
         {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
             for (int i = 1; i < 10; i++)
             {
-                string filePath = $"L0{new string('0', i)}L.txt";
+                string filePath = Path.Combine(desktopPath, $"L0{new string('0', i)}L.txt");
                 CreateTextFile(filePath);
             }
         }
@@ -18,8 +20,6 @@ class Program
             Console.WriteLine("Błąd: " + ex.Message);
         }
     }
-
-
     static void CreateTextFile(string filePath)
     {
         using (StreamWriter sw = new StreamWriter(filePath))
