@@ -18,7 +18,7 @@ class Program
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Błąd: " + ex.Message);
+            Console.WriteLine("Error: " + ex.Message);
         }
     }
 
@@ -48,19 +48,19 @@ class Program
         try
         {
             Process.Start(filePath);
-            Console.WriteLine($"Otwarto plik: {filePath}");
+            Console.WriteLine($"File opened: {filePath}");
         }
         catch (FileNotFoundException)
         {
-            Console.WriteLine($"Błąd: Plik {filePath} nie istnieje.");
+            Console.WriteLine($"Error: File does not exist error {filePath}.");
         }
         catch (UnauthorizedAccessException)
         {
-            Console.WriteLine($"Błąd: Brak uprawnień do otwarcia pliku {filePath}.");
+            Console.WriteLine($"Error: You don't have permission to open the file {filePath}.");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Błąd podczas otwierania pliku {filePath}: {ex.Message}");
+            Console.WriteLine($"Error opening file {filePath}: {ex.Message}");
         }
     }
 }
